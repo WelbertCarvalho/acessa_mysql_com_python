@@ -27,6 +27,10 @@ class Manip_dados_mysql:
         sql = declaracao + dados
         return sql
 
+    def comando_delete_produtos(self, coluna, criterio_where):
+        sql = f"delete from tbl_produtos where {coluna} = '{criterio_where}'"
+        return sql
+
     def exec_sql(self, sql):
         con = self.conectar_mysql()
         cursor = con.cursor()
@@ -37,6 +41,17 @@ class Manip_dados_mysql:
         
 
 
-insercao = Manip_dados_mysql("localhost", "datalake", "root", "insira aqui sua senha para conexão com o banco de dados")
-comando_insert = insercao.comando_insert_produtos(1, 'Calculadora', 5.98, 2)
-insercao.exec_sql(comando_insert)
+conexao = Manip_dados_mysql("localhost", "datalake", "root", "insira aqui sua senha para conexão com o banco de dados")
+insert_calculadora = conexao.comando_insert_produtos(1, 'Calculadora', 20.78, 5)
+insert_caderno = conexao.comando_insert_produtos(2, 'Caderno', 15.78, 3)
+
+delete_lapis = conexao.comando_delete_produtos('NomeProduto', 'Lapis')
+
+conexao.exec_sql(insert_calculadora)
+conexao.exec_sql(insert_caderno)
+conexao.exec_sql(delete_lapis)
+
+
+
+
+
