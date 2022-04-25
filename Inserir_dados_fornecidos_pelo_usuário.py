@@ -74,7 +74,7 @@ while lanca_valores:
     
     # Realiza a conexão com o banco de dados para realizar o lançamento dos dados informados
     try:
-        con = mysql.connector.connect(host = 'localhost', database = 'wel_informatica', user =  'root', password = 'Insira a senha para a conexão com o banco')
+        con = mysql.connector.connect(host = 'localhost', database = 'datalake', user =  'usuario', password = 'senha')
         cursor = con.cursor()
         cursor.execute(sql)
         con.commit()
