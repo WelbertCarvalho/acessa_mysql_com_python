@@ -1,7 +1,7 @@
 import mysql.connector
 
 try:
-    con = mysql.connector.connect(host='localhost', database='datalake', user='root', password='Insira a senha para a conexão com o banco')
+    con = mysql.connector.connect(host='localhost', database='datalake', user='usuario', password='senha')
 
     criar_tabela_sql = '''create table tbl_produtos(
                             IdProduto int(11) not null,
@@ -22,4 +22,4 @@ finally:
         cursor.close()
         con.close()
         print('Conexão ao MySQL finalizada.')
-print('\nPróxima aula: Inserção de Registros na tabela criada.')
+
