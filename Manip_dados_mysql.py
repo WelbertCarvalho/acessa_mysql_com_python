@@ -41,7 +41,7 @@ class Manip_dados_mysql:
         
 
 
-conexao = Manip_dados_mysql("localhost", "datalake", "root", "insira aqui sua senha para conexão com o banco de dados")
+conexao = Manip_dados_mysql("localhost", "datalake", "usuario", "senha")
 insert_calculadora = conexao.comando_insert_produtos(1, 'Calculadora', 20.78, 5)
 insert_caderno = conexao.comando_insert_produtos(2, 'Caderno', 15.78, 3)
 
