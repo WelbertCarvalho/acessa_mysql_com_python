@@ -1,7 +1,7 @@
 import mysql.connector
 
 try:
-    con = mysql.connector.connect(host='localhost', database='wel_informatica', user='root', password='Insira a senha para a conexão com o banco')
+    con = mysql.connector.connect(host='localhost', database='datalake', user='root', password='Insira a senha para a conexão com o banco')
 
     criar_tabela_sql = '''create table tbl_produtos(
                             IdProduto int(11) not null,
